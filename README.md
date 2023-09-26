@@ -10,7 +10,7 @@
 - 他機能も追加予定
 
 ## 使用法
-1. Texファイルをtxtに変換する
-    tex2txt.pyと同じディレクトリに置き，tex2txt.pyのinput_fileにファイル名を入れる
-2-1. 1で得たtxtファイルをtex_check.pyでも同様に処理し，出力を確認
-2-2. 1で得たtxtファイルをEnnoなどの校正サイトで校正
+1. Texファイルをtxtに変換する  
+   tex2txt.pyと同じディレクトリに置き，tex2txt.pyのinput_fileにファイル名を入れる  
+2. 1で得たtxtファイルをtex_check.pyでも同様に処理し，出力を確認  
+3. 1で得たtxtファイルをEnnoなどの校正サイトで校正  
