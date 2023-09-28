@@ -1,6 +1,6 @@
 import re
 
-input_file = "ex.tex"
+input_file = "ex_Tokai_1.tex"
 output_file = input_file[:-4] + ".txt"
 
 with open(input_file, "r") as f:
@@ -33,13 +33,21 @@ txt = re.sub(r"\\item", "", txt)
 txt = re.sub(r"%.*", "", txt)
 txt = re.sub(r"\\label.*", "", txt)
 txt = re.sub(r"\\footnote{.*?}", "", txt)
+txt = re.sub(r"\\footnotesize", "", txt)
+txt = re.sub(r"\\vspace{.*?}", "", txt)
 
 # \bibitemの最初に@@@bibitem@@@を追加
 txt = re.sub(r"\\bibitem", r"@@@bibitem@@@\n\\bibitem", txt, 1)
 
+# ref, cite, urlの中身を削除
+txt = re.sub(r"\\ref{.*}", r"\\ref{hoge}", txt)
+txt = re.sub(r"\\cite{.*}", r"\\cite{hoge}", txt)
+txt = re.sub(r"\\url{.*}", r"\\url{hoge}", txt)
+
 # 整形
 txt = re.sub("\n{2,100000}", "\n\n", txt)
 txt = txt.strip()
+
 
     
 open(output_file, "w").write(txt)
